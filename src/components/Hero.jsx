@@ -33,7 +33,7 @@ const Hero = () => {
           Node.js and DevOps.
         </p>
         <br />
-        <button className="shadow-[0_0_2px_#a855f7,0_0_2px_#a855f7,0_0_40px_#a855f7] transition cursor-pointer hover:scale-110 bg-purple-500 font-bold rounded-3xl p-3 w-fit text-xl">
+        <button className="shadow-[0_0_2px_#a855f7,0_0_2px_#a855f7,0_0_25px_#a855f7] transition cursor-pointer hover:scale-110 bg-purple-500 font-bold rounded-3xl p-3 w-fit text-xl">
           Download Resume
         </button>
         <br />
