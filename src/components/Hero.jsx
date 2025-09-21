@@ -7,10 +7,10 @@ const Hero = () => {
   return (
     <div className="mt-20 w-[80%] flex flex-wrap " id="about">
       <div className="lg:w-[50%] flex-col  flex flex-wrap  p-2 order-2 lg:order-1 ">
-        <h1 className="lg:text-5xl text-3xl font-bold">Hi, I am</h1>
-        <h1 className="lg:text-5xl text-3xl font-bold">Tanuj Methi</h1>
+        <h1 className="lg:text-5xl text-4xl font-bold">Hi, I am</h1>
+        <h1 className="lg:text-5xl text-4xl font-bold">Tanuj Methi</h1>
         <h1>
-          <span className="lg:text-5xl text-2xl font-bold whitespace-nowrap">
+          <span className="lg:text-5xl text-xl font-bold whitespace-nowrap">
             I am a{" "}
             <span className="text-purple-500 font-bold ">
               <Typewriter
