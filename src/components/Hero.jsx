@@ -10,11 +10,16 @@ const Hero = () => {
         <h1 className="lg:text-5xl text-4xl font-bold">Hi, I am</h1>
         <h1 className="lg:text-5xl text-4xl font-bold">Tanuj Methi</h1>
         <h1>
-          <span className="lg:text-5xl text-xl font-bold whitespace-nowrap">
+          <span className="lg:text-4xl text-base font-bold whitespace-nowrap">
             I am a{" "}
             <span className="text-purple-500 font-bold ">
               <Typewriter
-                words={["Coder", "Web Developer", "Coffee Lover"]}
+                words={[
+                  "Coder",
+                  "Web Developer",
+                  "React Developer",
+                  "Software Engineer",
+                ]}
                 loop={0}
                 cursor
                 cursorStyle="_"
@@ -50,7 +55,7 @@ const Hero = () => {
           <img
             src={tanujimage}
             alt="Tanuj Methi"
-            className="border-2 border-purple-500 lg:w-80 lg:h-80 rounded-full"
+            className="border-2 border-purple-500 w-50 h-50 lg:w-80 lg:h-80 rounded-full"
           />
         </Tilt>
       </div>
