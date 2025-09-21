@@ -27,11 +27,10 @@ const Hero = () => {
         </h1>
         <br />
         <p className="lg:text-2xl text-base text-slate-300">
-          I am a third year Btech student who is learning Web Development. I
-          have learned React, JavaScript, TailwindCss. Currently I am learning
-          Nodejs and Devops from Udemy Lorem, ipsum dolor sit amet consectetur
-          adipisicing elit. Distinctio, ipsam! Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Dolorum, fuga?
+          As a third-year B.Tech student, I am continuously learning and
+          improving my web development skills. So far, I’ve worked with React,
+          JavaScript, and Tailwind CSS, and I’m currently diving deeper into
+          Node.js and DevOps.
         </p>
         <br />
         <button className="shadow-[0_0_2px_#a855f7,0_0_2px_#a855f7,0_0_40px_#a855f7] transition cursor-pointer hover:scale-110 bg-purple-500 font-bold rounded-3xl p-3 w-fit text-xl">

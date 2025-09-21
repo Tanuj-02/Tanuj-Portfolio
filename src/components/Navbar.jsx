@@ -61,12 +61,12 @@ const Navbar = () => {
         ))}
       </div>
       <div className="hidden lg:flex gap-6">
-        <span className="cursor-pointer hover:text-purple-500">
+        <a href="https://github.com/Tanuj-02" target="_blank" className="cursor-pointer hover:text-purple-500">
           <FaGithub size={25} />
-        </span>
-        <span className="cursor-pointer hover:text-purple-500">
+        </a>
+        <a href="https://www.linkedin.com/in/tanujmethi/" target="_blank" className="cursor-pointer hover:text-purple-500">
           <FaLinkedin size={25} />
-        </span>
+        </a>
       </div>
       <button onClick={handlenav} className="lg:hidden">
         {isopen ? <ImCross size={25} /> : <IoReorderThree size={35} />}
@@ -96,12 +96,12 @@ const Navbar = () => {
             ))}
           </div>
           <div className="flex mt-8 justify-center gap-4">
-            <span className="coursor-pointer text-center hover:text-purple-500">
+            <a href="https://github.com/Tanuj-02" target="_blank" className="coursor-pointer text-center hover:text-purple-500">
               <FaGithub />
-            </span>
-            <span className="coursor-pointer text-center hover:text-purple-500">
+            </a>
+            <a href="https://www.linkedin.com/in/tanujmethi/" target="_blank" className="coursor-pointer text-center hover:text-purple-500">
               <FaLinkedin />
-            </span>
+            </a>
           </div>
         </div>
       )}
