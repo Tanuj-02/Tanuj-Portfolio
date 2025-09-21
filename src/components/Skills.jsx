@@ -17,7 +17,7 @@ const Skills = () => {
         {SkillsInfo.map((data) => (
           <div
             key={data.skills.name}
-            className="border rounded-2xl lg:rounded-3xl  bg-zinc-900/80 backdrop-blur-lg transition-all hover:shadow-[0_5px_25px_rgba(139,92,246,0.3)] shadow-[0_10px_30px_rgba(139,92,246,0.5)] border-zinc-700/50 flex flex-col flex-wrap w-full h-full lg:w-[40%] lg:h-96 mt-3 lg:m-6"
+            className="border rounded-2xl lg:rounded-3xl  bg-zinc-900/80 backdrop-blur-lg transition-all hover:shadow-[0_5px_25px_rgba(139,92,246,0.3)] shadow-[0_1px_5px_rgba(139,92,246,0.5)] border-zinc-700/50 flex flex-col flex-wrap w-full h-full lg:w-[40%] lg:h-96 mt-3 lg:m-6"
           >
             <h1 className=" text-slate-300 text-center h-fit w-full p-2 font-bold lg:text-3xl text-xl lg:p-4">
               {data.title}
