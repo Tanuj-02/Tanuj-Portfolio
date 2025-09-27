@@ -25,16 +25,16 @@ const Projects = () => {
     effect={"cards"}
     grabCursor={true}
     modules={[EffectCards]}
-    className="mySwiper w-[95%] h-[500px]" 
+    className="mySwiper w-[95%] h-[400px]" 
   >
     {projects.map((data) => (
       <SwiperSlide className="
         border border-white/10 
         bg-zinc-900/80 
-        backdrop-blur-lg 
+        backdrop-blur-sm 
         rounded-2xl 
-        shadow-lg 
-        hover:shadow-purple-500/40 
+        shadow-md 
+        hover:shadow-purple-500/20 
         hover:-translate-y-2 
         transition-transform 
         duration-300 
@@ -43,7 +43,7 @@ const Projects = () => {
       ">
        
         <div className="w-full h-48 object-cover rounded-xl overflow-hidden">
-          <img src={data.image} alt="" className="w-full h-full object-cover"/>
+          <img src={data.image} alt="" className="w-full h-full object-cover" loading="lazy"/>
         </div>
         <div className="p-6 flex-1 flex flex-col justify-between">
           <div>
