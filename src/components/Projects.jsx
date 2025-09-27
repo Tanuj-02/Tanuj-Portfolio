@@ -25,7 +25,7 @@ const Projects = () => {
     effect={"cards"}
     grabCursor={true}
     modules={[EffectCards]}
-    className="mySwiper w-[95%] h-[400px]" 
+    className="mySwiper w-[95%] h-[500px]" 
   >
     {projects.map((data) => (
       <SwiperSlide className="
