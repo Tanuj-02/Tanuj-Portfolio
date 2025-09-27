@@ -1,7 +1,7 @@
 .custom-pagination {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .custom-pagination .swiper-pagination-bullet {
