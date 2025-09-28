@@ -7,7 +7,7 @@ const Skills = () => {
       className="w-[80%] flex mt-8 flex-wrap items-center justify-center"
       id="skills"
     >
-      <span className="font-bold w-full text-center text-4xl">Skills</span>
+      <span className="font-bold w-full text-center text-4xl">SKILLS</span>
       <div className="bg-purple-500 w-24 h-1 mt-0.5"></div>
       <p className=" text-slate-300 text-lg lg:text-2xl w-full lg:text-center mt-4 font-semibold">
         A collection of my technical skills and expertise honed through various

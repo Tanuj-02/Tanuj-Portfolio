@@ -1,6 +1,7 @@
 
 import './App.css'
 import Background from './components/Background'
+import Contact from './components/Contact'
 import Education from './components/Education'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
@@ -17,6 +18,7 @@ function App() {
       <Skills/>
       <Projects/>
       <Education/>
+      <Contact/>
     </div>
     </Background>
   )
