@@ -3,15 +3,9 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { IoReorderThree } from "react-icons/io5";
 import { Link } from "react-scroll";
-
+import { navdata } from "../assests/data";
 const Navbar = () => {
-  const navdata = [
-    { id: "about", name: "About" },
-    { id: "skills", name: "Skills" },
-    { id: "projects", name: "Projects" },
-    { id: "education", name: "Education" },
-    { id: "contact", name: "Contact" },
-  ];
+  
 
   const [isopen, setIsopen] = useState(false);
   // const [active, setActive] = useState(null);
