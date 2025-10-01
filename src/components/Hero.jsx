@@ -2,15 +2,19 @@ import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Tilt from "react-parallax-tilt";
 import tanujimage from "../assests/tanuj-removebg-preview.png";
+import { RiShareBoxFill } from "react-icons/ri";
 
 const Hero = () => {
+  const resumebutton = () => {
+    window.open("https://drive.google.com/file/d/1HD99PqPzq1h8fn2QnF5l5kulUBSUVDkW/view?usp=drive_link","_blank")
+  }
   return (
     <div className="mt-20 w-[80%] flex flex-wrap " id="about">
       <div className="lg:w-[50%] flex-col  flex flex-wrap  p-2 order-2 lg:order-1 ">
         <h1 className="lg:text-5xl text-4xl font-bold">Hi, I am</h1>
         <h1 className="lg:text-5xl text-4xl font-bold">Tanuj Methi</h1>
-        <h1>
-          <span className="lg:text-4xl text-base font-bold whitespace-nowrap">
+        <h1 className="pt-2">
+          <span className="lg:text-4xl text-[1.2rem] font-bold whitespace-nowrap">
             I am a{" "}
             <span className="text-purple-500 font-bold ">
               <Typewriter
@@ -38,8 +42,8 @@ const Hero = () => {
           Node.js and DevOps.
         </p>
         <br />
-        <button className="shadow-[0_0_2px_#a855f7,0_0_2px_#a855f7,0_0_25px_#a855f7] transition cursor-pointer hover:scale-110 bg-purple-500 font-bold rounded-3xl p-3 w-fit text-xl">
-          Download Resume
+        <button onClick={resumebutton} className="shadow-[0_0_2px_#a855f7,0_0_2px_#a855f7,0_0_25px_#a855f7] transition cursor-pointer hover:scale-110 bg-purple-500 font-bold rounded-3xl flex justify-center items-center p-3 w-fit text-xl">
+          Open Resume<RiShareBoxFill/>
         </button>
         <br />
       </div>
