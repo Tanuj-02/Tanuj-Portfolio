@@ -116,10 +116,10 @@ const Projects = () => {
           transition-transform 
           duration-300 
           overflow-hidden
-          flex flex-col
+          flex flex-col cursor-pointer
         "
             >
-              <div className="w-full h-48 object-cover cursor-pointer flex justify-center items-center rounded-xl overflow-hidden">
+              <div className="w-full h-48 object-cover flex justify-center items-center rounded-xl overflow-hidden">
                 <img
                   src={data.image}
                   alt=""
