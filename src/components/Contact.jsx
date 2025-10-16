@@ -3,9 +3,14 @@ import React from "react";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 const Contact = () => {
-  const { register, handleSubmit, reset , formState: {errors, isSubmitting} } = useForm();
- async function onsubmit(data) {
-  await new Promise((resolve)=> setTimeout(resolve,5000))
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+  } = useForm();
+  async function onsubmit(data) {
+    await new Promise((resolve) => setTimeout(resolve, 5000));
     emailjs
       .send("service_f1zd193", "template_u3mzkbl", data, "pg7Yzo9S8Y_JB8gSG")
       .then(
@@ -71,7 +76,7 @@ const Contact = () => {
       border border-white/10 focus:outline-none focus:border-purple-500 
       placeholder:text-zinc-500 transition-all"
           />
-{errors.user_name && <span>{errors.user_name.message}</span>}
+          {errors.user_name && <span>{errors.user_name.message}</span>}
           <input
             type="email"
             required
@@ -85,13 +90,15 @@ const Contact = () => {
           <input
             type="text"
             required
-            {...register("subject",{maxLength:{value:75, message:"Max Length is 75"}})}
+            {...register("subject", {
+              maxLength: { value: 75, message: "Max Length is 75" },
+            })}
             placeholder="Subject"
             className="w-full px-4 py-2 rounded-lg bg-zinc-800/80 text-white 
       border border-white/10 focus:outline-none focus:border-purple-500 
       placeholder:text-zinc-500 transition-all"
           />
-{errors.subject && <span>{errors.subject.message}</span>}
+          {errors.subject && <span>{errors.subject.message}</span>}
           <textarea
             {...register("message")}
             placeholder="Message"
@@ -104,14 +111,12 @@ const Contact = () => {
 
           <input
             type="submit"
-            disabled = {isSubmitting}
+            disabled={isSubmitting}
             className="mt-4 px-6 py-2 rounded-lg bg-purple-600/20 text-purple-400 
       border border-purple-500/30 hover:bg-purple-600/30 hover:text-purple-300 
       hover:shadow-lg transition-all duration-300 hover:cursor-pointer"
-           value={isSubmitting ? "Sending" : "Send"}
-           >
-        
-          </input>
+            value={isSubmitting ? "Sending" : "Send"}
+          ></input>
         </form>
       </div>
     </div>
