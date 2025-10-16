@@ -119,7 +119,7 @@ const Projects = () => {
           flex flex-col
         "
             >
-              <div className="w-full h-48 object-cover flex justify-center items-center rounded-xl overflow-hidden">
+              <div className="w-full h-48 object-cover cursor-pointer flex justify-center items-center rounded-xl overflow-hidden">
                 <img
                   src={data.image}
                   alt=""
