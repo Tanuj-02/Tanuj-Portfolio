@@ -45,7 +45,7 @@ const Contact = () => {
   }
   return (
     <div
-      className="w-[80%] mt-8 flex flex-wrap items-center justify-center"
+      className="w-[90%] lg:w-[80%] mt-8 flex flex-wrap items-center justify-center"
       id="contact"
     >
       <ToastContainer />
