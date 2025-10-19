@@ -1,7 +1,6 @@
 import React from "react";
 import { Typewriter } from "react-simple-typewriter";
 import Tilt from "react-parallax-tilt";
-import tanujimage from "../assests/tanuj-removebg-preview.png";
 import { RiShareBoxFill } from "react-icons/ri";
 
 const Hero = () => {
@@ -64,7 +63,7 @@ const Hero = () => {
           gyroscope={true}
         >
           <img
-            src={tanujimage}
+            src="/tanuj-removebg-preview.png"
             alt="Tanuj Methi"
             className="border-2 border-purple-500 w-50 h-50 lg:w-80 lg:h-80 rounded-full"
           />
