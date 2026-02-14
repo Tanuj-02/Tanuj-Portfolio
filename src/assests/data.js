@@ -129,7 +129,7 @@ export const SkillsInfo = [
       img: JecrcU,
       school: "Jecrc University",
       date: "July 23 - July 27",
-      grade: "8.86 CGPA",
+      grade: "8 CGPA",
       desc: "Pursuing undergraduate studies in Computer Science and Engineering under Jecrc University.",
       degree: "Bachelor of Technology - B.Tech",
     },
