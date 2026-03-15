@@ -20,8 +20,8 @@ It serves as my online presence where anyone can explore my work, get to know me
 ## 🛠️ Tools & Technologies
 This portfolio is built using:
 
-- **Frontend**: HTML, CSS, JavaScript (or React/Next.js if you used it)
-- **Styling**: (Tailwind CSS) 
+- **Frontend**: React
+- **Styling**: Tailwind CSS 
 - **Deployment**: [Vercel](https://vercel.com/)
 - **Version Control**: Git & GitHub
 

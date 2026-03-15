@@ -43,7 +43,7 @@ const Hero = () => {
           As a third-year B.Tech student, I am continuously learning and
           improving my web development skills. So far, I’ve worked with React,
           JavaScript, and Tailwind CSS, and I’m currently diving deeper into
-          Node.js and DevOps.
+          Spring Boot and DevOps.
         </p>
         <br />
         <button
