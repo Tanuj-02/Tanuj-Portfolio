@@ -6,6 +6,7 @@ import { useTheme } from "../ThemeContext";
 
 const Hero = () => {
   const { isDark } = useTheme();
+
   const resumebutton = () => {
     window.open(
       "https://drive.google.com/file/d/1HD99PqPzq1h8fn2QnF5l5kulUBSUVDkW/view?usp=drive_link",
@@ -41,8 +42,8 @@ const Hero = () => {
         <br />
         <p className={`lg:text-2xl text-base ${isDark ? "text-slate-300" : "text-slate-600"}`}>
           As a third-year B.Tech student, I am continuously learning and
-          improving my web development skills. So far, I’ve worked with React,
-          JavaScript, and Tailwind CSS, and I’m currently diving deeper into
+          improving my web development skills. So far, I've worked with React,
+          JavaScript, and Tailwind CSS, and I'm currently diving deeper into
           Node.js and DevOps.
         </p>
         <br />

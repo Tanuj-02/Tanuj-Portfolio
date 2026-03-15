@@ -2,7 +2,10 @@ import emailjs from "@emailjs/browser";
 import React from "react";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
+import { useTheme } from "../ThemeContext";
+
 const Contact = () => {
+  const { isDark } = useTheme();
   const {
     register,
     handleSubmit,
@@ -23,7 +26,7 @@ const Contact = () => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "dark",
+            theme: isDark ? "dark" : "light",
             transition: Bounce,
           });
         },
@@ -36,7 +39,7 @@ const Contact = () => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: isDark ? "dark" : "light",
             transition: Bounce,
           });
         }
@@ -49,16 +52,19 @@ const Contact = () => {
       id="contact"
     >
       <ToastContainer />
-      <span className="font-bold w-full text-center text-4xl">CONTACT</span>
+      <span className={`font-bold w-full text-center text-4xl ${isDark ? "text-white" : ""}`}>CONTACT</span>
       <div className="bg-purple-500 w-38 h-1 mt-0.5"></div>
-      <p className=" text-slate-300 text-lg lg:text-2xl w-full lg:text-center mt-4 font-semibold">
-        I’d love to hear from you—reach out for any opportunities or questions!
+      <p className={` text-lg lg:text-2xl w-full lg:text-center mt-4 font-semibold ${isDark ? "text-slate-300" : "text-slate-600"}`}>
+        I'd love to hear from you—reach out for any opportunities or questions!
       </p>
       <div
-        className="flex flex-col items-center justify-center mt-6 lg:m-6 w-full lg:w-1/2 
-  rounded-2xl bg-zinc-900/90 backdrop-blur-md border border-white/10 shadow-lg p-6"
+        className={`flex flex-col items-center justify-center mt-6 lg:m-6 w-full lg:w-1/2 rounded-2xl border shadow-md p-6 ${
+          isDark
+            ? "bg-zinc-900/90 border-white/10"
+            : "bg-white border-slate-200"
+        }`}
       >
-        <h3 className="w-full text-center text-2xl font-bold text-white mb-6">
+        <h3 className={`w-full text-center text-2xl font-bold mb-6 ${isDark ? "text-white" : "text-slate-900"}`}>
           Connect With Me
         </h3>
         <form
@@ -72,19 +78,23 @@ const Contact = () => {
               minLength: { value: 3, message: "Minimum Length at least 3" },
             })}
             placeholder="Your Name"
-            className="w-full px-4 py-2 rounded-lg bg-zinc-800/80 text-white 
-      border border-white/10 focus:outline-none focus:border-purple-500 
-      placeholder:text-zinc-500 transition-all"
+            className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-purple-400 transition-all ${
+              isDark
+                ? "bg-slate-800/50 text-white border-slate-700 placeholder-slate-400 focus:bg-slate-700/50"
+                : "bg-slate-100/50 text-slate-900 border-slate-200 placeholder-slate-500 focus:bg-white"
+            }`}
           />
-          {errors.user_name && <span>{errors.user_name.message}</span>}
+          {errors.user_name && <span className={`text-sm ${isDark ? "text-red-400" : "text-red-500"}`}>{errors.user_name.message}</span>}
           <input
             type="email"
             required
             {...register("user_email")}
             placeholder="Your Email"
-            className="w-full px-4 py-2 rounded-lg bg-zinc-800/80 text-white 
-      border border-white/10 focus:outline-none focus:border-purple-500 
-      placeholder:text-zinc-500 transition-all"
+            className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-purple-400 transition-all ${
+              isDark
+                ? "bg-slate-800/50 text-white border-slate-700 placeholder-slate-400 focus:bg-slate-700/50"
+                : "bg-slate-100/50 text-slate-900 border-slate-200 placeholder-slate-500 focus:bg-white"
+            }`}
           />
 
           <input
@@ -94,27 +104,33 @@ const Contact = () => {
               maxLength: { value: 75, message: "Max Length is 75" },
             })}
             placeholder="Subject"
-            className="w-full px-4 py-2 rounded-lg bg-zinc-800/80 text-white 
-      border border-white/10 focus:outline-none focus:border-purple-500 
-      placeholder:text-zinc-500 transition-all"
+            className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-purple-400 transition-all ${
+              isDark
+                ? "bg-slate-800/50 text-white border-slate-700 placeholder-slate-400 focus:bg-slate-700/50"
+                : "bg-slate-100/50 text-slate-900 border-slate-200 placeholder-slate-500 focus:bg-white"
+            }`}
           />
-          {errors.subject && <span>{errors.subject.message}</span>}
+          {errors.subject && <span className={`text-sm ${isDark ? "text-red-400" : "text-red-500"}`}>{errors.subject.message}</span>}
           <textarea
             {...register("message")}
             placeholder="Message"
             rows="4"
             required
-            className="w-full px-4 py-2 rounded-lg bg-zinc-800/80 text-white 
-      border border-white/10 focus:outline-none focus:border-purple-500 
-      placeholder:text-zinc-500 transition-all resize-none"
+            className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-purple-400 transition-all resize-none ${
+              isDark
+                ? "bg-slate-800/50 text-white border-slate-700 placeholder-slate-400 focus:bg-slate-700/50"
+                : "bg-slate-100/50 text-slate-900 border-slate-200 placeholder-slate-500 focus:bg-white"
+            }`}
           />
 
           <input
             type="submit"
             disabled={isSubmitting}
-            className="mt-4 px-6 py-2 rounded-lg bg-purple-600/20 text-purple-400 
-      border border-purple-500/30 hover:bg-purple-600/30 hover:text-purple-300 
-      hover:shadow-lg transition-all duration-300 hover:cursor-pointer"
+            className={`mt-4 px-6 py-2 rounded-lg border transition-all duration-300 hover:cursor-pointer font-medium focus:outline-none ${
+              isDark
+                ? "bg-slate-800/80 text-white border-slate-700 hover:bg-purple-600/80 hover:text-white hover:border-purple-500 hover:shadow-lg"
+                : "bg-slate-200 text-slate-900 border-slate-300 hover:bg-purple-200 hover:text-purple-700 hover:border-purple-300 hover:shadow-md disabled:opacity-70"
+            }`}
             value={isSubmitting ? "Sending" : "Send"}
           ></input>
         </form>

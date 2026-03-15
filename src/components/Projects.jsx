@@ -9,13 +9,26 @@ import { Pagination, Navigation, Mousewheel, Keyboard } from "swiper/modules";
 import "./Projects.css";
 import { ImCross } from "react-icons/im";
 import { RiShareBoxFill } from "react-icons/ri";
+import { useTheme } from "../ThemeContext";
+
 const Projects = () => {
   const [open, setOpen] = useState(false);
+  const [closing, setClosing] = useState(false);
   const [selectproject, setSelectproject] = useState(null);
+  const { isDark } = useTheme();
+
   const handleclick = (project) => {
-    setOpen(!open);
     setSelectproject(project);
-    console.log(open);
+    setClosing(false);
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setOpen(false);
+      setClosing(false);
+    }, 220);
   };
 
   return (
@@ -23,13 +36,15 @@ const Projects = () => {
       className="w-[80%] mt-8 flex flex-wrap items-center justify-center"
       id="projects"
     >
-      <span className="font-bold w-full text-center text-4xl">PROJECTS</span>
+      <span className={`font-bold w-full text-center text-4xl ${isDark ? "text-white" : ""}`}>PROJECTS</span>
       <div className="bg-purple-500 w-38 h-1 mt-0.5"></div>
-      <p className="text-slate-300 text-base lg:text-2xl text-wrap w-full lg:text-center mt-4 font-semibold">
+      <p className={`text-base lg:text-2xl text-wrap w-full lg:text-center mt-4 font-semibold ${isDark ? "text-slate-300" : "text-slate-600"}`}>
         My projects reflect my skills and creativity in action. Here are the
         details of the work I have done so far.
       </p>
-      <div></div> {/* Mobile */}
+      <div></div>
+
+      {/* Mobile Swiper */}
       <div className="w-full mt-4 lg:hidden">
         <Swiper
           effect={"cards"}
@@ -40,19 +55,14 @@ const Projects = () => {
           {projects.map((data) => (
             <SwiperSlide
               onClick={() => handleclick(data)}
-              className="
-        border border-white/10 
-        bg-zinc-900/80 
-        backdrop-blur-sm 
-        rounded-2xl 
-        shadow-md 
-        hover:shadow-purple-500/20 
-        hover:-translate-y-2 
-        transition-transform 
-        duration-300 
-        overflow-hidden
-        flex flex-col
-      "
+              className={`
+                rounded-2xl shadow-md transition-all duration-300 overflow-hidden flex flex-col
+                ${isDark
+                  ? "border border-white/10 bg-zinc-900 hover:shadow-purple-500/20"
+                  : "border border-slate-200 bg-white hover:shadow-purple-200/40"
+                }
+                hover:-translate-y-2
+              `}
             >
               <div className="w-full h-48 object-cover rounded-xl overflow-hidden">
                 <img
@@ -64,10 +74,10 @@ const Projects = () => {
               </div>
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2 truncate">
+                  <h3 className={`text-2xl font-bold mb-2 truncate ${isDark ? "text-white" : "text-gray-900"}`}>
                     {data.title}
                   </h3>
-                  <p className="text-zinc-400 mb-4 pt-2 line-clamp-3">
+                  <p className={`mb-4 pt-2 line-clamp-3 ${isDark ? "text-slate-400" : "text-gray-600"}`}>
                     {data.description}
                   </p>
                 </div>
@@ -75,7 +85,11 @@ const Projects = () => {
                   {data.tags.map((tagdata, index) => (
                     <span
                       key={index}
-                      className="inline-block bg-zinc-800/90 text-purple-500 border border-purple-500/30 text-xs font-semibold rounded-full px-2 py-1 mr-2 mb-2 transition-all hover:bg-purple-500/10 hover:shadow-lg"
+                      className={`inline-block text-xs font-semibold rounded-full px-2 py-1 mr-2 mb-2 transition-all ${
+                        isDark
+                          ? "bg-slate-800 text-purple-400 border border-purple-500/30 hover:bg-purple-500/10 hover:shadow-lg"
+                          : "bg-gray-100 text-purple-500 border border-purple-500/30 hover:bg-purple-500/10 hover:shadow-lg"
+                      }`}
                     >
                       {tagdata}
                     </span>
@@ -86,7 +100,8 @@ const Projects = () => {
           ))}
         </Swiper>
       </div>
-      {/* Large screen */}
+
+      {/* Desktop Swiper */}
       <div className="hidden lg:block w-full">
         <Swiper
           slidesPerView={3}
@@ -105,19 +120,14 @@ const Projects = () => {
             <SwiperSlide
               key={i}
               onClick={() => handleclick(data)}
-              className="
-          border border-white/10 
-          bg-zinc-900/80 
-          backdrop-blur-lg 
-          rounded-2xl 
-          shadow-lg 
-          hover:shadow-purple-500/40 
-          hover:-translate-y-1 
-          transition-transform 
-          duration-300 
-          overflow-hidden
-          flex flex-col cursor-pointer
-        "
+              className={`
+                rounded-2xl shadow-lg transition-transform duration-300 overflow-hidden flex flex-col cursor-pointer
+                ${isDark
+                  ? "border border-white/10 bg-zinc-900/80 hover:shadow-purple-500/40"
+                  : "border border-slate-200 bg-white hover:shadow-purple-200/40"
+                }
+                hover:-translate-y-1
+              `}
             >
               <div className="w-full h-48 object-cover flex justify-center items-center rounded-xl overflow-hidden">
                 <img
@@ -127,13 +137,12 @@ const Projects = () => {
                   loading="lazy"
                 />
               </div>
-
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold text-white mb-2 truncate">
+                  <h3 className={`text-2xl font-bold mb-2 truncate ${isDark ? "text-white" : "text-slate-900"}`}>
                     {data.title}
                   </h3>
-                  <p className="text-zinc-400 mb-4 pt-2 line-clamp-3">
+                  <p className={`mb-4 pt-2 line-clamp-3 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
                     {data.description}
                   </p>
                 </div>
@@ -141,7 +150,11 @@ const Projects = () => {
                   {data.tags.map((tagsdata, index) => (
                     <span
                       key={index}
-                      className="inline-block bg-zinc-800/90 text-purple-500 border border-purple-500/30 text-xs font-semibold rounded-full px-2 py-1 mr-2 mb-2 transition-all hover:bg-purple-500/10 hover:shadow-lg"
+                      className={`inline-block text-xs font-semibold rounded-full px-2 py-1 mr-2 mb-2 transition-all ${
+                        isDark
+                          ? "bg-slate-800/90 text-purple-400 border border-purple-500/30 hover:bg-purple-500/10 hover:shadow-lg"
+                          : "bg-slate-100 text-purple-600 border border-purple-300/40 hover:bg-purple-100 hover:shadow-md"
+                      }`}
                     >
                       {tagsdata}
                     </span>
@@ -154,41 +167,46 @@ const Projects = () => {
 
         <div className="custom-pagination flex justify-center mt-6"></div>
       </div>
+
+      {/* Modal */}
       {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4">
+        <div
+          className={`modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 ${
+            isDark ? "bg-black/60" : "bg-black/30"
+          } ${closing ? "closing" : ""}`}
+          onClick={handleClose}
+        >
           <button
-            onClick={() => setOpen(false)}
-            className="absolute top-4 right-4 lg:top-8 lg:right-12 text-white hover:text-purple-500 transition"
+            onClick={handleClose}
+            className={`absolute top-4 right-4 lg:top-8 lg:right-12 hover:text-purple-500 transition ${
+              isDark ? "text-slate-300" : "text-slate-800"
+            }`}
           >
             <ImCross className="w-6 h-6" />
           </button>
 
           <div
-            className="
-        relative flex flex-col items-center text-center lg:text-left 
-        rounded-3xl bg-zinc-900/95 backdrop-blur-md 
-        border-4 border-white/10 shadow-lg 
-        w-full max-w-3xl lg:h-auto 
-        p-6
-      "
+            className={`modal-card relative flex flex-col items-center text-center lg:text-left rounded-3xl backdrop-blur-md border-4 shadow-xl w-full max-w-3xl lg:h-auto p-6 ${
+              isDark
+                ? "bg-zinc-900/95 border-white/10"
+                : "bg-white border-slate-200"
+            } ${closing ? "closing" : ""}`}
+            onClick={(e) => e.stopPropagation()}
           >
             <img
               src={selectproject.image}
               alt={selectproject.title}
-              className="
-          w-[95%] h-40 lg:h-72 
-          object-contain 
-          rounded-2xl shadow-md mb-6 bg-zinc-800
-        "
+              className={`w-[95%] h-40 lg:h-72 object-contain rounded-2xl shadow-md mb-6 ${
+                isDark ? "bg-zinc-800" : "bg-slate-100"
+              }`}
               loading="lazy"
             />
 
-            <h2 className="text-xl lg:text-3xl font-bold text-white mb-4">
+            <h2 className={`text-xl lg:text-3xl font-bold mb-4 ${isDark ? "text-white" : "text-slate-900"}`}>
               {selectproject.title}
             </h2>
 
-            {/* Description */}
-            <p className="text-zinc-400 text-sm lg:text-base mb-6 leading-relaxed px-2">
+            <p className={`text-sm lg:text-base mb-6 leading-relaxed px-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>
               {selectproject.description}
             </p>
 
@@ -196,13 +214,11 @@ const Projects = () => {
               {selectproject.tags.map((data, index) => (
                 <span
                   key={index}
-                  className="
-              inline-block bg-zinc-800/90 text-purple-500 
-              border border-purple-500/30 
-              text-xs lg:text-sm font-semibold 
-              rounded-full px-3 py-1 mr-2 mb-2 
-              transition-all hover:bg-purple-500/10 hover:shadow-lg
-            "
+                  className={`inline-block text-xs lg:text-sm font-semibold rounded-full px-3 py-1 mr-2 mb-2 transition-all ${
+                    isDark
+                      ? "bg-slate-800/90 text-purple-400 border border-purple-500/30 hover:bg-purple-500/10 hover:shadow-lg"
+                      : "bg-slate-100 text-purple-600 border border-purple-300/40 hover:bg-purple-100 hover:shadow-md"
+                  }`}
                 >
                   {data}
                 </span>
@@ -214,12 +230,11 @@ const Projects = () => {
                 href={selectproject.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-            px-4 py-2 rounded-lg bg-zinc-800/80 text-white 
-            border border-white/10 
-            hover:bg-purple-600/20 hover:text-purple-400 
-            transition-all duration-300
-          "
+                className={`px-4 py-2 rounded-lg border transition-all duration-300 ${
+                  isDark
+                    ? "bg-slate-800/80 text-white border-slate-700 hover:bg-purple-600/20 hover:text-purple-400"
+                    : "bg-slate-100 text-slate-900 border-slate-200 hover:bg-purple-100 hover:text-purple-600 hover:border-purple-300"
+                }`}
               >
                 View Code
               </a>
@@ -227,12 +242,11 @@ const Projects = () => {
                 href={selectproject.webapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="
-            px-4 py-2 rounded-lg bg-zinc-800/80 text-white 
-            border border-white/10 flex items-center gap-1 
-            hover:bg-purple-600/20 hover:text-purple-400 
-            transition-all duration-300
-          "
+                className={`px-4 py-2 rounded-lg border flex items-center gap-1 transition-all duration-300 ${
+                  isDark
+                    ? "bg-slate-800/80 text-white border-slate-700 hover:bg-purple-600/20 hover:text-purple-400"
+                    : "bg-slate-100 text-slate-900 border-slate-200 hover:bg-purple-100 hover:text-purple-600 hover:border-purple-300"
+                }`}
               >
                 Visit <RiShareBoxFill className="inline-block" />
               </a>

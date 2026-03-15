@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { education } from "../assests/data";
+import { useTheme } from "../ThemeContext";
 
 const Education = () => {
   const [activeId, setActiveId] = useState(null);
+  const { isDark } = useTheme();
   const toggle = (id) => setActiveId((prev) => (prev === id ? null : id));
 
   return (
@@ -10,16 +12,16 @@ const Education = () => {
       className="w-[80%] mt-8 flex flex-wrap items-center justify-center"
       id="education"
     >
-      <span className="font-bold w-full text-center text-4xl">EDUCATION</span>
+      <span className={`font-bold w-full text-center text-4xl ${isDark ? "text-white" : ""}`}>EDUCATION</span>
       <div className="bg-purple-500 w-38 h-1 mt-0.5 rounded-sm"></div>
-      <p className="text-slate-300 text-base lg:text-2xl text-wrap w-full lg:text-center mt-4 font-semibold">
+      <p className={`text-base lg:text-2xl text-wrap w-full lg:text-center mt-4 font-semibold ${isDark ? "text-slate-300" : "text-slate-600"}`}>
         My education has been a journey of learning and development. Here are
         the details of my academic background
       </p>
       <div className="w-full mt-6 flex flex-col items-center">
         {/* Desktop */}
         <div className="hidden md:flex relative flex-col items-center w-full max-w-5xl">
-          <div className="absolute left-1/2 top-6 bottom-6 w-[3px] bg-gray-700 -translate-x-1/2"></div>
+          <div className={`absolute left-1/2 top-6 bottom-6 w-[3px] -translate-x-1/2 ${isDark ? "bg-slate-700" : "bg-slate-300"}`}></div>
 
           <div className="flex flex-col gap-16 w-full">
             {education.map((edu, index) => {
@@ -36,8 +38,12 @@ const Education = () => {
                   {/* center dot + logo */}
                   <div className="absolute left-1/2 top-6 -translate-x-1/2 flex flex-col items-center z-10">
                     <div
-                      className={`w-6 h-6 rounded-full border-4 border-zinc-900 shadow-lg ${
-                        isActive ? "bg-purple-500" : "bg-zinc-800"
+                      className={`w-6 h-6 rounded-full border-4 shadow-lg ${
+                        isActive
+                          ? "bg-purple-500"
+                          : isDark
+                          ? "bg-slate-700 border-zinc-900"
+                          : "bg-slate-300 border-slate-50"
                       }`}
                     ></div>
                     <img
@@ -52,19 +58,23 @@ const Education = () => {
                     onKeyDown={(e) => {
                       if (e.key === "Enter" || e.key === " ") toggle(edu.id);
                     }}
-                    className={`relative border border-white/10 bg-zinc-900/80 backdrop-blur-sm rounded-2xl shadow-lg p-6 w-[45%] cursor-pointer transition-transform duration-300 overflow-hidden ${
+                    className={`relative rounded-2xl shadow-md p-6 w-[45%] cursor-pointer transition-transform duration-300 overflow-hidden ${
+                      isDark
+                        ? "border border-white/10 bg-zinc-900/80 hover:shadow-purple-500/20"
+                        : "border border-slate-200 bg-white hover:shadow-purple-200/30"
+                    } ${
                       isActive
                         ? "scale-105"
-                        : "hover:-translate-y-1 hover:shadow-purple-500/30"
+                        : "hover:-translate-y-1"
                     }`}
                     style={{ textAlign: isLeft ? "left" : "right" }}
                     aria-expanded={isActive}
                   >
-                    <h3 className="text-2xl font-bold text-white mb-1">
+                    <h3 className={`text-2xl font-bold mb-1 ${isDark ? "text-white" : "text-slate-900"}`}>
                       {edu.degree}
                     </h3>
-                    <p className="text-zinc-400 text-sm">{edu.school}</p>
-                    <p className="text-zinc-400 text-sm mb-2">{edu.date}</p>
+                    <p className={`text-sm ${isDark ? "text-slate-400" : "text-slate-600"}`}>{edu.school}</p>
+                    <p className={`text-sm mb-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>{edu.date}</p>
                     <p className="text-purple-500 text-sm font-medium mb-2">
                       {edu.grade}
                     </p>
@@ -73,13 +83,17 @@ const Education = () => {
                         isActive ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
                       }`}
                     >
-                      <p className="text-zinc-300 text-sm mt-2">{edu.desc}</p>
+                      <p className={`text-sm mt-2 ${isDark ? "text-slate-400" : "text-slate-700"}`}>{edu.desc}</p>
                     </div>
                     <div
                       className={`absolute top-6 w-4 h-4 rotate-45 hidden md:block ${
                         isLeft
-                          ? "-right-2 border-r-2 border-t-2 border-gray-700 bg-zinc-900/80"
-                          : "-left-2 border-l-2 border-t-2 border-gray-700 bg-zinc-900/80"
+                          ? isDark
+                            ? "-right-2 border-r-2 border-t-2 border-slate-700 bg-zinc-900/80"
+                            : "-right-2 border-r-2 border-t-2 border-slate-300 bg-white"
+                          : isDark
+                          ? "-left-2 border-l-2 border-t-2 border-slate-700 bg-zinc-900/80"
+                          : "-left-2 border-l-2 border-t-2 border-slate-300 bg-white"
                       }`}
                     />
                   </article>
@@ -101,10 +115,14 @@ const Education = () => {
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") toggle(edu.id);
                 }}
-                className={`border border-white/10 bg-zinc-900/80 backdrop-blur-sm rounded-2xl shadow-md p-5 text-center cursor-pointer transition-transform duration-300 ${
+                className={`rounded-2xl shadow-md p-5 text-center cursor-pointer transition-transform duration-300 ${
+                  isDark
+                    ? "border border-white/10 bg-zinc-900/80 hover:shadow-purple-500/20"
+                    : "border border-slate-200 bg-white hover:shadow-purple-200/30"
+                } ${
                   isActive
                     ? "scale-105"
-                    : "hover:-translate-y-1 hover:shadow-purple-500/20"
+                    : "hover:-translate-y-1"
                 }`}
                 aria-expanded={isActive}
               >
@@ -113,9 +131,9 @@ const Education = () => {
                   alt={edu.school}
                   className="w-14 h-14 mb-3 rounded-full bg-white p-1 shadow-md mx-auto object-contain"
                 />
-                <h3 className="text-xl font-bold text-white">{edu.degree}</h3>
-                <p className="text-zinc-400 text-sm">{edu.school}</p>
-                <p className="text-zinc-400 text-sm mb-2">{edu.date}</p>
+                <h3 className={`text-xl font-bold ${isDark ? "text-white" : "text-slate-900"}`}>{edu.degree}</h3>
+                <p className={`text-sm ${isDark ? "text-slate-400" : "text-slate-600"}`}>{edu.school}</p>
+                <p className={`text-sm mb-2 ${isDark ? "text-slate-400" : "text-slate-600"}`}>{edu.date}</p>
                 <p className="text-purple-500 text-sm font-medium mb-2">
                   {edu.grade}
                 </p>
@@ -124,7 +142,7 @@ const Education = () => {
                     isActive ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
                   }`}
                 >
-                  <p className="text-zinc-300 text-sm mt-2">{edu.desc}</p>
+                  <p className={`text-sm mt-2 ${isDark ? "text-slate-400" : "text-slate-700"}`}>{edu.desc}</p>
                 </div>
               </article>
             );

@@ -2,10 +2,13 @@ import React from "react";
 import { navdata } from "../assests/data";
 import { Link } from "react-scroll";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { useTheme } from "../ThemeContext";
+
 const Footer = () => {
+  const { isDark } = useTheme();
   return (
-    <div className="w-[80%] mt-12 ">
-      <h1 className="text-purple-500 text-2xl font-semibold text-center">
+    <div className={`w-[80%] mt-12 ${isDark ? "text-white" : ""}`}>
+      <h1 className={`text-purple-500 text-2xl font-semibold text-center`}>
         Tanuj Methi
       </h1>
       <div className="flex flex-wrap justify-center gap-2 lg:gap-4 items-center m-6">
@@ -19,14 +22,14 @@ const Footer = () => {
           >
             <span
               key={data.id}
-              className="lg:text-base text-sm hover:cursor-pointer hover:scale-110"
+              className={`lg:text-base text-sm hover:cursor-pointer hover:scale-110 transition-all ${isDark ? "text-slate-300 hover:text-purple-400" : "text-slate-700 hover:text-purple-500"}`}
             >
               {data.name}
             </span>
           </Link>
         ))}
       </div>
-      <div className="flex flex-wrap gap-4 justify-center items-center text-xl">
+      <div className={`flex flex-wrap gap-4 justify-center items-center text-xl ${isDark ? "text-slate-300" : "text-slate-700"}`}>
         <a
           href="https://github.com/Tanuj-02"
           target="_blank"

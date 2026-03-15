@@ -9,21 +9,24 @@ import Navbar from './components/Navbar'
 import Projects from './components/Projects'
 import Skills from './components/Skills'
 import { Analytics } from "@vercel/analytics/react"
-function App() {
+import { ThemeProvider } from './ThemeContext'
 
+function App() {
   return (
-    <Background>
-    <div className='flex flex-wrap items-center justify-center '>
-      <Navbar/>
-      <Hero/>
-      <Skills/>
-      <Projects/>
-      <Education/>
-      <Contact/>
-      <Footer/>
-    </div>
-    <Analytics/>
-    </Background>
+    <ThemeProvider>
+      <Background>
+        <div className='flex flex-wrap items-center justify-center '>
+          <Navbar/>
+          <Hero/>
+          <Skills/>
+          <Projects/>
+          <Education/>
+          <Contact/>
+          <Footer/>
+        </div>
+        <Analytics/>
+      </Background>
+    </ThemeProvider>
   )
 }
 
