@@ -6,6 +6,7 @@ import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { Link } from "react-scroll";
 import { navdata } from "../assests/data";
 import { useTheme } from "../ThemeContext";
+import { SiLeetcode } from "react-icons/si";
 
 const Navbar = () => {
   const [isopen, setIsopen] = useState(false);
@@ -69,6 +70,13 @@ const Navbar = () => {
           <FaGithub size={25} />
         </a>
         <a
+          href="https://leetcode.com/u/Tanuj_02/"
+          target="_blank"
+          className="cursor-pointer hover:text-purple-500"
+        >
+          <SiLeetcode size={25} />
+        </a>
+        <a
           href="https://www.linkedin.com/in/tanujmethi/"
           target="_blank"
           className="cursor-pointer hover:text-purple-500"
@@ -77,15 +85,13 @@ const Navbar = () => {
         </a>
       </div>
 
-      {/* Mobile hamburger button with rotation animation */}
+      {/* Mobile */}
       <button
         onClick={handlenav}
         className={`lg:hidden transition-transform duration-300 ${isopen ? "rotate-90" : "rotate-0"}`}
       >
         {isopen ? <ImCross size={25} /> : <IoReorderThree size={35} />}
       </button>
-
-      {/* Mobile menu with slide-down + fade + staggered item animation */}
       <div
         className={`w-full lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           isopen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0 mt-0"
@@ -115,7 +121,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Social icons — fixed alignment with items-center and consistent icon sizes */}
         <div
           className={`flex mt-8 mb-2 justify-center items-center gap-4 transition-all duration-300 ${
             isopen ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
@@ -135,6 +140,13 @@ const Navbar = () => {
             className="flex items-center justify-center w-9 h-9 cursor-pointer hover:text-purple-500"
           >
             <FaGithub size={25} />
+          </a>
+          <a
+            href="https://leetcode.com/u/Tanuj_02/"
+            target="_blank"
+            className="flex items-center justify-center w-9 h-9 cursor-pointer hover:text-purple-500"
+          >
+            <SiLeetcode size={25} />
           </a>
           <a
             href="https://www.linkedin.com/in/tanujmethi/"

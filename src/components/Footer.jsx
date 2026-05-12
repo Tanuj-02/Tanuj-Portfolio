@@ -3,6 +3,7 @@ import { navdata } from "../assests/data";
 import { Link } from "react-scroll";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useTheme } from "../ThemeContext";
+import { SiLeetcode } from "react-icons/si";
 
 const Footer = () => {
   const { isDark } = useTheme();
@@ -36,6 +37,13 @@ const Footer = () => {
           className="hover:text-purple-500 hover:scale-125"
         >
           <FaGithub />
+        </a>
+        <a
+          href="https://leetcode.com/u/Tanuj_02/"
+          target="_blank"
+          className="hover:text-purple-500 hover:scale-125"
+        >
+          <SiLeetcode />
         </a>
         <a
           href="https://www.linkedin.com/in/tanujmethi/"
