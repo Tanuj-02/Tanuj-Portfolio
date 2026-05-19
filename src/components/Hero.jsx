@@ -8,7 +8,7 @@ const Hero = () => {
   const { isDark } = useTheme();
   const resumebutton = () => {
     window.open(
-      "https://drive.google.com/file/d/1HD99PqPzq1h8fn2QnF5l5kulUBSUVDkW/view?usp=drive_link",
+      "https://drive.google.com/file/d/1J71H-oHjQgAREq96T1IkOaSK0r1X1N0e/view?usp=drive_link",
       "_blank"
     );
   };
