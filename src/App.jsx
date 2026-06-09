@@ -1,6 +1,7 @@
 
 import './App.css'
 import Background from './components/Background'
+import Certificate from './components/Certificate'
 import Contact from './components/Contact'
 import Education from './components/Education'
 import Footer from './components/Footer'
@@ -20,6 +21,7 @@ function App() {
           <Hero/>
           <Skills/>
           <Projects/>
+          <Certificate/>
           <Education/>
           <Contact/>
           <Footer/>

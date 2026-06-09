@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`fixed top-0 z-50 w-full lg:w-[80%] lg:mt-2 flex flex-wrap justify-between items-center text-2xl lg:rounded-full p-4 lg:p-3 backdrop-blur-md transition-all duration-300 ${
+    <nav className={`fixed top-0 z-50 w-full lg:w-[80%] lg:mt-2 flex flex-wrap justify-between items-center text-xl lg:rounded-full p-4 lg:p-3 backdrop-blur-md transition-all duration-300 ${
       isDark
         ? "bg-zinc-900/50 border border-white/10 text-white"
         : "bg-white/60 border border-slate-200/40 shadow-sm text-slate-800"

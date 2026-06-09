@@ -1,10 +1,11 @@
-import emailjs from "@emailjs/browser";
 import React from "react";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { useTheme } from "../ThemeContext";
+import axios from "axios";
 
 const Contact = () => {
+  const API_URL = import.meta.env.VITE_API_URL;
   const { isDark } = useTheme();
   const {
     register,
@@ -13,12 +14,10 @@ const Contact = () => {
     formState: { errors, isSubmitting },
   } = useForm();
   async function onsubmit(data) {
-    await new Promise((resolve) => setTimeout(resolve, 5000));
-    emailjs
-      .send("service_f1zd193", "template_u3mzkbl", data, "pg7Yzo9S8Y_JB8gSG")
-      .then(
-        () => {
-          toast.success("Message Sent Successfully ✅", {
+    try{
+      await axios.post(`${API_URL}/send`,data)
+
+      toast.success("Message Sent Successfully ✅", {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -29,9 +28,10 @@ const Contact = () => {
             theme: isDark ? "dark" : "light",
             transition: Bounce,
           });
-        },
-        () => {
-          toast.error("Failed to Sent Message ❌", {
+
+      reset();
+    } catch(error){
+       toast.error("Failed to Sent Message ❌", {
             position: "top-right",
             autoClose: 5000,
             hideProgressBar: false,
@@ -42,9 +42,9 @@ const Contact = () => {
             theme: isDark ? "dark" : "light",
             transition: Bounce,
           });
-        }
-      );
-    reset();
+
+      console.log(error);
+    }
   }
   return (
     <div
@@ -74,7 +74,7 @@ const Contact = () => {
           <input
             type="text"
             required
-            {...register("user_name", {
+            {...register("name", {
               minLength: { value: 3, message: "Minimum Length at least 3" },
             })}
             placeholder="Your Name"
@@ -88,7 +88,7 @@ const Contact = () => {
           <input
             type="email"
             required
-            {...register("user_email")}
+            {...register("email")}
             placeholder="Your Email"
             className={`w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-purple-400 transition-all ${
               isDark

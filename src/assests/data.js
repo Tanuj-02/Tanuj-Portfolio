@@ -200,6 +200,7 @@ export  const navdata = [
       { id: "about", name: "About" },
       { id: "skills", name: "Skills" },
       { id: "projects", name: "Projects" },
+      { id: "certificate", name: "Certificate" },
       { id: "education", name: "Education" },
       { id: "contact", name: "Contact" },
     ];
