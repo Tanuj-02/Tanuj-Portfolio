@@ -14,17 +14,34 @@ import githubLogo from './tech_logo/github.png';
 import vscodeLogo from './tech_logo/vscode.png';
 import netlifyLogo from './tech_logo/netlify.png';
 import vercelLogo from './tech_logo/vercel.png';
+import springbootLogo from './tech_logo/springboot.png';
+import postmanLogo from './tech_logo/postman.png';
+import springsecurityLogo from './tech_logo/springsecurity.jpg';
+import websockets from './tech_logo/websockets.png';
+import hibernate from './tech_logo/hibernate.jpg';
+import mysql from './tech_logo/mysql.png';
+import jwt from './tech_logo/jwt.png';
+import aws from './tech_logo/aws.svg';
 
 // Education Section Logo's
 import JecrcU from './education_logo/JECRC_University__.png';
 import StAnselm from './education_logo/st_anselm.png';
 
 // Project Section Logo's
+import skillswap from './work_logo/skillswap.png';
 import ecommerce from './work_logo/ecommerce.png'
 import moviezone from './work_logo/moviezone.png';
 import mealdb from './work_logo/mealdb.png';
 import pixabay from './work_logo/pixabay.png'
 
+// Certification Section Logo's
+import awsCloudQuest from './certifications_logo/cloudquest.png';
+import googleCloudLogo from './certifications_logo/gccf.png';
+import nptelLogo from './certifications_logo/nptel.png';
+import cloudquestImage from './certifications_logo/cloudquestImage.png';
+import softskillImage from './certifications_logo/softskillImage.png';
+import leadershipImage from './certifications_logo/leadership.png';
+import essentials from './certifications_logo/essentials.png';
 
 export const SkillsInfo = [
   {
@@ -38,13 +55,17 @@ export const SkillsInfo = [
       { name: 'Swiper', logo: swiperlogo },
     ],
   },
-  // {
-  //   title: 'Backend',
-  //   skills: [
-  //     // { name: 'Springboot', logo: springbootLogo },
-  //     // { name: 'Node JS', logo: nodejsLogo },
-  //   ],
-  // },
+  {
+    title: 'Backend',
+    skills: [
+      { name: 'Springboot', logo: springbootLogo },
+      { name: 'JSON Web Tokens', logo: jwt },
+      { name: 'Spring Security', logo: springsecurityLogo },
+      { name: 'Hibernate', logo: hibernate },
+      { name: 'Web Sockets', logo: websockets },
+      { name: 'MySQL', logo: mysql },
+    ],
+  },
   {
     title: 'Languages',
     skills: [
@@ -61,6 +82,7 @@ export const SkillsInfo = [
       { name: 'Git', logo: gitLogo },
       { name: 'GitHub', logo: githubLogo },
       { name: 'VS Code', logo: vscodeLogo },
+      { name: 'Postman', logo: postmanLogo },
       { name: 'Vercel', logo: vercelLogo },
       { name: 'Netlify', logo: netlifyLogo }
     ],
@@ -156,6 +178,16 @@ export const SkillsInfo = [
   export const projects = [
     {
       id: 0,
+      title: "Skill Swap",
+      description:
+        "Built a full-stack peer-to-peer skill exchange platform with real-time chat using WebSockets, JWT au-thentication, Redux Toolkit for state management, and Amazon RDS for database management. Developed the frontend with React.js and Tailwind CSS, and the backend with Spring Boot and REST APIs.",
+      image: skillswap,
+      tags: ["SpringBoot", "React JS", "WebSockets","Amazon RDS", "Redux Toolkit", "Tailwind CSS"],
+      github: "https://github.com/Tanuj-02/peerskillexchange",
+      webapp: "https://skill-swap-ptp.vercel.app/",
+    },
+    {
+      id: 1,
       title: "Amazon Ecommerce",
       description:
         "Built a responsive eCommerce site with product listings, cart system, and global state management using React JS, Router DOM, and Context API.",
@@ -204,3 +236,51 @@ export  const navdata = [
       { id: "education", name: "Education" },
       { id: "contact", name: "Contact" },
     ];
+
+export const Certifications = [
+  {
+    id: 1,
+    title: "AWS Cloud Quest: Cloud Practitioner",
+    description:
+      "Completed hands-on cloud learning through AWS Cloud Quest, covering core AWS services, cloud concepts, security, networking, and deployment fundamentals.",
+    logo: awsCloudQuest,
+    image : cloudquestImage,
+    verifyCredential: "https://www.credly.com/badges/8c229171-d4cd-4b7e-8fa6-53ea2f69f3b5/public_url",
+  },
+  {
+    id: 2,
+    title: "Google Cloud Computing Foundations",
+    description:
+      "Completed foundational training in Google Cloud Platform, including cloud infrastructure, compute, storage, networking, and core cloud services.",
+    logo: googleCloudLogo,
+    image: googleCloudLogo,
+    verifyCredential: "https://www.credly.com/badges/99c54514-896c-4cde-9c1c-a2bb2af5f98a/public_url",
+  },
+  {
+    id: 3,
+    title: "AWS Cloud Practitioner Essentials",
+    description:
+      "Completed the AWS Cloud Practitioner Essentials course, gaining foundational knowledge of AWS Cloud concepts, core services, security, networking, pricing, billing, and the AWS Well-Architected Framework. Developed an understanding of cloud computing fundamentals and best practices for deploying and managing applications on AWS.",
+    logo: aws,
+    image: essentials,
+    verifyCredential: "https://drive.google.com/file/d/1WKxBVc8iScfvxwSlloZcpvwDZxwimF4a/view?usp=drivesdk",
+  },
+  {
+    id: 4,
+    title: "NPTEL – Soft Skills",
+    description:
+      "Successfully completed the NPTEL Soft Skills course, focusing on effective communication, teamwork, interpersonal skills, and professional development.",
+    logo: nptelLogo,
+    image: softskillImage,
+    verifyCredential: "https://drive.google.com/file/d/12BsWzzUjmWZcBCf7_noOOS-Xlf_z397q/view",
+  },
+  {
+    id: 5,
+    title: "NPTEL – Leadership and Team Effectiveness",
+    description:
+      "Completed the NPTEL course on Leadership and Team Effectiveness, covering leadership principles, team collaboration, motivation, and organizational behavior.",
+    logo: nptelLogo,
+    image: leadershipImage,
+    verifyCredential: "https://drive.google.com/file/d/1D3tYu7uv2P0dbyDKeFJmkwibj8mugPKu/view",
+  },
+];
