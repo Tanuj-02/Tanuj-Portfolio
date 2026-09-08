@@ -22,7 +22,7 @@ This portfolio is built using:
 
 - **Frontend**: React
 - **Styling**: Tailwind CSS 
-- **Deployment**: [Vercel](https://vercel.com/)
+- **Deployment**: [AWS](https://tanujmethi.in/)
 - **Version Control**: Git & GitHub
 
 
@@ -30,7 +30,7 @@ This portfolio is built using:
 
 ## 🌍 Deployment
 The website is deployed using **Vercel** for seamless and fast hosting.  
-👉 Check it out live here: [My Portfolio](https://tanuj-portfolio-sigma.vercel.app/)
+👉 Check it out live here: [My Portfolio](https://tanujmethi.in/)
 
 ---
 
