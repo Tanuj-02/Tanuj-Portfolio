@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useTheme } from '../ThemeContext'
 import { Certifications } from '../assests/data'
 
@@ -57,6 +57,11 @@ const Certificate = () => {
 
           {/* Mobile horizontal list */}
           <div className="lg:hidden">
+            <p className={`text-xs text-center mb-2 ${
+    isDark ? 'text-slate-400' : 'text-slate-500'
+  }`}>
+    ← Swipe to see more certifications →
+  </p>
             <div className="flex gap-4 overflow-x-auto py-3 px-2">
               {Certifications.map((cert) => (
                 <button
@@ -125,7 +130,7 @@ const Certificate = () => {
         <div className={`fixed inset-0 z-50 flex items-center justify-center p-4 ${isDark ? 'bg-black/80' : 'bg-black/40'}`}>
           <div className="absolute inset-0" onClick={() => setOpenCert(null)} />
           <div
-            className={`relative w-full max-w-3xl overflow-hidden rounded-2xl border p-4 shadow-2xl ${isDark ? 'border-white/10 bg-zinc-950/95' : 'border-slate-200 bg-white'}`}
+            className={`relative w-full max-w-2xl overflow-hidden rounded-2xl border p-4 shadow-2xl ${isDark ? 'border-white/10 bg-zinc-950/95' : 'border-slate-200 bg-white'}`}
             onClick={(e) => e.stopPropagation()}
           >
             <button

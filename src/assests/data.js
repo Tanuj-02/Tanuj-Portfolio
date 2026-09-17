@@ -36,6 +36,8 @@ import pixabay from './work_logo/pixabay.png'
 
 // Certification Section Logo's
 import awsCloudQuest from './certifications_logo/cloudquest.png';
+import junosBadge from './certifications_logo/junos badge.png'
+import junosCertificate from './certifications_logo/junos certificate.png'
 import googleCloudLogo from './certifications_logo/gccf.png';
 import nptelLogo from './certifications_logo/nptel.png';
 import cloudquestImage from './certifications_logo/cloudquestImage.png';
@@ -240,6 +242,15 @@ export  const navdata = [
 export const Certifications = [
   {
     id: 1,
+    title: "Juniper JNCIA-Junos",
+    description:
+      "Demonstrated foundational knowledge of Juniper Networks Junos OS, including networking fundamentals, routing, IPv4/IPv6, OSPF, BGP, VLANs, firewall filters, and Junos device operations.",
+    logo: junosBadge,
+    image : junosCertificate,
+    verifyCredential: "https://www.credly.com/badges/3a45f7d8-db6d-4354-a900-f4624251fea2/public_url",
+  },
+  {
+    id: 2,
     title: "AWS Cloud Quest: Cloud Practitioner",
     description:
       "Completed hands-on cloud learning through AWS Cloud Quest, covering core AWS services, cloud concepts, security, networking, and deployment fundamentals.",
@@ -248,7 +259,7 @@ export const Certifications = [
     verifyCredential: "https://www.credly.com/badges/8c229171-d4cd-4b7e-8fa6-53ea2f69f3b5/public_url",
   },
   {
-    id: 2,
+    id: 3,
     title: "Google Cloud Computing Foundations",
     description:
       "Completed foundational training in Google Cloud Platform, including cloud infrastructure, compute, storage, networking, and core cloud services.",
@@ -257,7 +268,7 @@ export const Certifications = [
     verifyCredential: "https://www.credly.com/badges/99c54514-896c-4cde-9c1c-a2bb2af5f98a/public_url",
   },
   {
-    id: 3,
+    id: 4,
     title: "AWS Cloud Practitioner Essentials",
     description:
       "Completed the AWS Cloud Practitioner Essentials course, gaining foundational knowledge of AWS Cloud concepts, core services, security, networking, pricing, billing, and the AWS Well-Architected Framework. Developed an understanding of cloud computing fundamentals and best practices for deploying and managing applications on AWS.",
@@ -266,7 +277,7 @@ export const Certifications = [
     verifyCredential: "https://drive.google.com/file/d/1WKxBVc8iScfvxwSlloZcpvwDZxwimF4a/view?usp=drivesdk",
   },
   {
-    id: 4,
+    id: 5,
     title: "NPTEL – Soft Skills",
     description:
       "Successfully completed the NPTEL Soft Skills course, focusing on effective communication, teamwork, interpersonal skills, and professional development.",
@@ -275,7 +286,7 @@ export const Certifications = [
     verifyCredential: "https://drive.google.com/file/d/12BsWzzUjmWZcBCf7_noOOS-Xlf_z397q/view",
   },
   {
-    id: 5,
+    id: 6,
     title: "NPTEL – Leadership and Team Effectiveness",
     description:
       "Completed the NPTEL course on Leadership and Team Effectiveness, covering leadership principles, team collaboration, motivation, and organizational behavior.",
