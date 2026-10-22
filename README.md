@@ -10,6 +10,7 @@ It serves as my online presence where anyone can explore my work, get to know me
 - **About Me** section to introduce myself.
 - **Skills & Technologies** I’m proficient in.
 - **Projects** with descriptions and live/demo links.
+- **Current projects timeline** powered by GitHub milestones.
 - **Education** section highlighting my academic background.
 - **Contact Information** for easy communication.
 - Responsive design for mobile, tablet, and desktop.

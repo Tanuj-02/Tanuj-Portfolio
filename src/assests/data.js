@@ -232,6 +232,7 @@ export const SkillsInfo = [
 
 export  const navdata = [
       { id: "about", name: "About" },
+      { id: "timeline", name: "Timeline" },
       { id: "skills", name: "Skills" },
       { id: "projects", name: "Projects" },
       { id: "certificate", name: "Certificate" },

@@ -1,0 +1,24 @@
+{
+  "updatedAt": "2026-10-22T05:21:57Z",
+  "projects": [
+    {
+      "repo": {
+        "full_name": "Tanuj-02/helpdesk-ai-rag",
+        "name": "helpdesk-ai-rag",
+        "description": "",
+        "html_url": "https://github.com/Tanuj-02/helpdesk-ai-rag"
+      },
+      "milestones": [
+        {
+          "id": 1,
+          "title": "HelpDesk AI — v1 Platform & Public Demo",
+          "description": "Build and deploy a multi-tenant AI helpdesk with RabbitMQ-based document processing, company-scoped RAG, real-time ticket chat, email notifications, and a Next.js frontend.",
+          "due_on": "2026-11-02T00:00:00Z",
+          "html_url": "https://github.com/Tanuj-02/helpdesk-ai-rag/milestone/1",
+          "open_issues": 5,
+          "closed_issues": 8
+        }
+      ]
+    }
+  ]
+}
