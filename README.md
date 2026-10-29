@@ -14,7 +14,15 @@ It serves as my online presence where anyone can explore my work, get to know me
 - **Education** section highlighting my academic background.
 - **Contact Information** for easy communication.
 - Responsive design for mobile, tablet, and desktop.
-- Deployed and hosted with **Vercel**.
+- Hosted on **Amazon S3** with a custom domain.
+
+---
+
+## Project timeline
+
+The site fetches tagged repositories and their milestones from GitHub when opened, then caches the result in the browser for 15 minutes to reduce API requests. **Refresh progress** bypasses that cache. New projects and progress changes need no portfolio code edit or redeployment after this version of the site is deployed.
+
+The timeline shows one overall progress summary per project. Select a project to open its milestone details in a pop-up. Projects stack vertically on mobile and wrap into rows on wider screens.
 
 ---
 
@@ -23,14 +31,14 @@ This portfolio is built using:
 
 - **Frontend**: React
 - **Styling**: Tailwind CSS 
-- **Deployment**: [AWS](https://tanujmethi.in/)
+- **Deployment**: Amazon S3 at [tanujmethi.in](https://tanujmethi.in/)
 - **Version Control**: Git & GitHub
 
 
 ---
 
 ## 🌍 Deployment
-The website is deployed using **Vercel** for seamless and fast hosting.  
+The frontend is hosted on Amazon S3 under a custom domain.
 👉 Check it out live here: [My Portfolio](https://tanujmethi.in/)
 
 ---
