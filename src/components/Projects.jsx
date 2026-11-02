@@ -238,18 +238,20 @@ const Projects = () => {
               >
                 View Code
               </a>
-              <a
-                href={selectproject.webapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`px-4 py-2 rounded-lg border flex items-center gap-1 transition-all duration-300 ${
-                  isDark
-                    ? "bg-slate-800/80 text-white border-slate-700 hover:bg-purple-600/20 hover:text-purple-400"
-                    : "bg-slate-100 text-slate-900 border-slate-200 hover:bg-purple-100 hover:text-purple-600 hover:border-purple-300"
-                }`}
-              >
-                Visit <RiShareBoxFill className="inline-block" />
-              </a>
+              {selectproject.webapp && (
+                  <a
+                      href={selectproject.webapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`px-4 py-2 rounded-lg border flex items-center gap-1 transition-all duration-300 ${
+                          isDark
+                              ? "bg-slate-800/80 text-white border-slate-700 hover:bg-purple-600/20 hover:text-purple-400"
+                              : "bg-slate-100 text-slate-900 border-slate-200 hover:bg-purple-100 hover:text-purple-600 hover:border-purple-300"
+                      }`}
+                  >
+                    Visit <RiShareBoxFill className="inline-block" />
+                  </a>
+              )}
             </div>
           </div>
         </div>

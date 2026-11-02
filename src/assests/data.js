@@ -32,7 +32,8 @@ import skillswap from './work_logo/skillswap.png';
 import ecommerce from './work_logo/ecommerce.png'
 import moviezone from './work_logo/moviezone.png';
 import mealdb from './work_logo/mealdb.png';
-import pixabay from './work_logo/pixabay.png'
+import pixabay from './work_logo/pixabay.png';
+import helpdesk from './work_logo/helpdesk.png';
 
 // Certification Section Logo's
 import awsCloudQuest from './certifications_logo/cloudquest.png';
@@ -180,6 +181,16 @@ export const SkillsInfo = [
   export const projects = [
     {
       id: 0,
+      title: "HelpDesk AI",
+      description:
+          "Built a multi-tenant AI helpdesk with five Spring Boot services and a Next.js frontend. RabbitMQ coordinates document verification, vector indexing, chat setup, and email notifications. The platform combines company-specific RAG answers using Qdrant and Google GenAI with JWT authentication, support tickets, and real-time WebSocket chat.",
+      image: helpdesk,
+      tags: ["Spring Boot", "Next.js", "RabbitMQ", "Spring AI", "Qdrant", "WebSockets"],
+      github: "https://github.com/Tanuj-02/helpdesk-ai-rag",
+      webapp: "",
+    },
+    {
+      id: 1,
       title: "Skill Swap",
       description:
         "Built a full-stack peer-to-peer skill exchange platform with real-time chat using WebSockets, JWT au-thentication, Redux Toolkit for state management, and Amazon RDS for database management. Developed the frontend with React.js and Tailwind CSS, and the backend with Spring Boot and REST APIs.",
@@ -189,7 +200,7 @@ export const SkillsInfo = [
       webapp: "https://skill-swap-ptp.vercel.app/",
     },
     {
-      id: 1,
+      id: 2,
       title: "Amazon Ecommerce",
       description:
         "Built a responsive eCommerce site with product listings, cart system, and global state management using React JS, Router DOM, and Context API.",
@@ -199,7 +210,7 @@ export const SkillsInfo = [
       webapp: "https://ecommerce-react-gilt-tau.vercel.app/",
     },
     {
-      id: 1,
+      id: 3,
       title: "Movie Zone",
       description:
         "Built a movie discovery app with React JS and Tailwind CSS, featuring trending movies, responsive design, and smooth navigation for better user engagement.",
@@ -209,7 +220,7 @@ export const SkillsInfo = [
       github: "https://github.com/tanuj0202/MovieZone",
     },
     {
-      id: 2,
+      id: 4,
       title: "Meal DB",
       description:
         "Created a recipe search app using TheMealDB API with React JS and Tailwind CSS, enabling users to explore meals and view detailed recipes in a clean interface.",
@@ -219,7 +230,7 @@ export const SkillsInfo = [
       webapp: "https://meal-db-tawny.vercel.app/",
     },
     {
-      id: 3,
+      id: 5,
       title: "PixaBay",
       description:
         "Designed an image search platform powered by the Pixabay API with React JS and Tailwind CSS, offering fast search functionality and responsive UI.",
